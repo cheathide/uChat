@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "ejs": "^2.6.1",
+    "mongoose": "^5.3.13"
+  }
+}
