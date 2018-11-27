@@ -76,6 +76,11 @@ export default {
             	repassword: this.form.repassword
             }).then(res => {
                 console.log(res)
+                if (res.data.msg === 'success') {
+                    
+                } else {
+                    this.$vux.toast.text(res.data.data)
+                }
             })
         }
     }

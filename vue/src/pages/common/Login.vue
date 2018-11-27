@@ -1,6 +1,6 @@
 <template>
   <div class="page-login">
-    <x-input class="username" placeholder="请输入手机号/邮箱">
+    <x-input class="username" placeholder="请输入手机号/邮箱" v-model="form.username">
       <div slot="label">
         <iconfont :name="`icon-shouji`"></iconfont>
       </div>
@@ -15,7 +15,7 @@
       <x-button class="get_verificat">获取验证码</x-button>
     </cell-box>
 
-    <x-input v-else class="password" placeholder="请输入密码">
+    <x-input v-else class="password" placeholder="请输入密码" v-model="form.password">
       <div slot="label">
         <iconfont :name="`icon-tianxie`"></iconfont>
       </div>
@@ -29,7 +29,7 @@
         </router-link>
     </p>
 
-    <x-button class="login">登录</x-button>
+    <x-button class="login" @click.native="login">登录</x-button>
 
     <div class="login_order">
       <p class="title"><span>其他登录方式</span></p>
@@ -46,18 +46,37 @@
 import { CellBox, XInput, XButton } from 'vux'
 import Iconfont from '../../components/Iconfont'
 export default {
-  name: '',
-  components: {
-    CellBox,
-    XInput,
-    Iconfont,
-    XButton
-  },
-  data () {
-    return {
-      toPassword: false
+    name: '',
+    components: {
+        CellBox,
+        XInput,
+        Iconfont,
+        XButton
+    },
+    data () {
+        return {
+            toPassword: true,
+            form: {
+                username: '',
+                password: ''
+            }
+        }
+    },
+    methods: {
+        login () {
+            this.$http.post('/api/login', {
+                username: this.form.username,
+                password: this.form.password
+            }).then(res => {
+                console.log(res.data.data)
+                if (res.data.msg === 'success') {
+
+                } else {
+                    this.$vux.toast.text(res.data.data)
+                }
+            })
+        }
     }
-  }
 }
 </script>
 

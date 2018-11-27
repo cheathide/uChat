@@ -1,7 +1,9 @@
 {
   "devDependencies": {
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "mongoose": "^5.3.13",
     "socket.io": "^2.1.1"
   }
