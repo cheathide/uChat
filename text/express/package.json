@@ -1,6 +1,8 @@
 {
   "devDependencies": {
     "ejs": "^2.6.1",
-    "mongoose": "^5.3.13"
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13",
+    "socket.io": "^2.1.1"
   }
 }

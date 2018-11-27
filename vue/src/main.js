@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'lib-flexible'
+import './config/vux'
+// import VueSocketio from 'vue-socket.io'
+
+// Vue.use(VueSocketio, 'http://localhost:4000')
 
 Vue.config.productionTip = false
 

@@ -15,6 +15,8 @@ const db = mongoose()
 
 app.engine( 'html', require('ejs').renderFile )
 .set('view engine', 'html')
+.use(bodyParser.json())
+.use(bodyParser.urlencoded({ extended: true }))
 .use(index)
 
 const io = require('socket.io').listen(server)

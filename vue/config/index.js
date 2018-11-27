@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         "/":{
-            target: 'https://ws.idianwoo.com/',
+            target: 'http://192.168.1.106:4000/',
             secure: false,
             changeOrigin: true
         }
