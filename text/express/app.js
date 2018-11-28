@@ -45,6 +45,7 @@ app.engine( 'html', require('ejs').renderFile )
 //         next()
 //     }
 // })
+.use(express.static(path.join(__dirname, 'views/front')))
 .use('/api', api_index)
 
 

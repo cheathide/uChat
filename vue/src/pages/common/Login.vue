@@ -70,7 +70,7 @@ export default {
             }).then(res => {
                 console.log(res.data.data)
                 if (res.data.msg === 'success') {
-
+                    this.$router.push('/')
                 } else {
                     this.$vux.toast.text(res.data.data)
                 }

@@ -11,7 +11,7 @@
 
         <group gutter="5px" class="uchat-lists">
             <template v-for="i in 9">
-                <cell class="uchat" title="cheathide" inline-desc="aaaa">
+                <cell class="uchat" title="cheathide" inline-desc="aaaa" @click.native="link('/chat-window')">
                     <div slot="icon" class="hd_image">
                         <!-- <img src="https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=2984041693,3165082508&fm=85&s=70B92172153275945EECF548030080B3"> -->
                     </div>
@@ -40,6 +40,11 @@ export default {
     },
     data () {
         return {}
+    },
+    methods: {
+        link (url) {
+            this.$router.push(url)
+        }
     }
 }
 </script>

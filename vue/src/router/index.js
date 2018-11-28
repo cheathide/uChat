@@ -4,6 +4,7 @@ import Index from '@/pages/Index'
 import Register from '@/pages/common/Register'
 import Login from '@/pages/common/Login'
 import UChat from '@/pages/chat/UChat'
+import ChatWindow from '@/pages/chat/ChatWindow'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/chat-window',
+      name: 'ChatWindow',
+      component: ChatWindow
     }
   ]
 })

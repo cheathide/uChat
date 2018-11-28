@@ -44,7 +44,7 @@ router
 		})
 		return
 	}
-	UserModel.find({username: options.username}, (error, data) => {
+	UserModel.find({username: options.username}, [username, password], (error, data) => {
 		if (error) console.log(error)
 		if (data.length) {
 			res.send({
@@ -90,6 +90,8 @@ router
 		if (error) console.log(error)
 		console.log(data.length)
 		if (data.length) {
+			req.session.user = data[0]
+			console.log(req.session.user)
 			res.send({
 				msg: 'success',
 				data: '登录成功'
@@ -100,8 +102,11 @@ router
 				data: '账号或密码错误'
 			})
 		}
-		console.log(data)
 	})
+})
+
+.get('/get_userInfo', (req, res) => {
+	res.send(req.session.user || '请登录')
 })
 
 module.exports = router
