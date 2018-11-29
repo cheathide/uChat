@@ -22,7 +22,9 @@ app.use(cookieParser())
 app.use(session({
   resave: true,
   saveUninitialized: false,
-  secret: 'love'
+  secret: 'love',
+  name: 'sessionId',
+  cookie: {maxAge: 30 * 60 * 1000}
 }))
 app.engine( 'html', require('ejs').renderFile )
 .set('view engine', 'html')

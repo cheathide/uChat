@@ -5,11 +5,11 @@
         </keep-alive>
 
         <tabbar>
-            <tabbar-item selected>
+            <tabbar-item selected link="/uchat">
                 <iconfont slot="icon" name="icon-liaotian"></iconfont>
                 <span slot="label">uchat</span>
             </tabbar-item>
-            <tabbar-item>
+            <tabbar-item link="/contact">
                 <iconfont slot="icon" name="icon-tongxunlu"></iconfont>
                 <span slot="label">contact</span>
             </tabbar-item>
